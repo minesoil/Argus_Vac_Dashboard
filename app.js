@@ -16,7 +16,7 @@ function riskPillHtml(pct) {
 
 async function pollThreat() {
   let t = null;
-  try { t = await (await fetch("/threat")).json(); } catch (e) { return; }
+  try { t = await (await fetch("threat")).json(); } catch (e) { return; }
 
   const banner = $("banner");
   const text = $("banner-text");
@@ -61,7 +61,7 @@ function escapeHtml(s) {
 
 async function pollStats() {
   try {
-    $("stats").textContent = await (await fetch("/stats")).text();
+    $("stats").textContent = await (await fetch("stats")).text();
   } catch (e) { /* keep last known */ }
 }
 
