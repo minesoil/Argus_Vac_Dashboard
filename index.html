@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Argus Vac - Mission View</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo"></span>
+      <h1>ARGUS VAC <span class="ver">mission view</span></h1>
+    </div>
+    <div id="clock" class="clock">--:--:--</div>
+  </header>
+
+  <section id="banner" class="banner clear">
+    <span class="banner-icon" id="banner-icon">&#9679;</span>
+    <span id="banner-text">SYSTEM CLEAR</span>
+    <span id="banner-detail" class="banner-detail"></span>
+  </section>
+
+  <main>
+    <section class="video-wrap">
+      <img id="feed" src="/stream" alt="camera feed">
+      <div id="feed-lost" class="feed-lost hidden">FEED OFFLINE - retrying...</div>
+    </section>
+
+    <aside class="panel">
+      <h2>Pipeline health</h2>
+      <pre id="stats">connecting...</pre>
+
+      <h2>Top threat</h2>
+      <table id="threat-table">
+        <thead><tr><th>Name</th><th>Risk</th><th>Center</th></tr></thead>
+        <tbody><tr class="muted"><td colspan="3">none</td></tr></tbody>
+      </table>
+
+      <p class="hint">Banner colors:
+        <span class="chip chip-ok">clear</span>
+        <span class="chip chip-warn">warning</span>
+        <span class="chip chip-crit">halt-level</span>
+      </p>
+    </aside>
+  </main>
+
+  <footer>build 10.4 &middot; camera + floor-anomaly layers &middot; serial link ready (off)</footer>
+  <script src="/app.js"></script>
+</body>
+</html>

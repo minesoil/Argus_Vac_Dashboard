@@ -1,0 +1,82 @@
+/* Argus Vac mission view - dark ops theme */
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --edge: #21262d;
+  --text: #d8dee6;
+  --muted: #8b949e;
+  --ok: #1a7f37;
+  --warn: #b5651d;
+  --crit: #b00020;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0; padding: 14px;
+  background: var(--bg); color: var(--text);
+  font-family: system-ui, "Segoe UI", sans-serif;
+}
+
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 10px; border-bottom: 1px solid var(--edge);
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--ok); display: inline-block;
+}
+h1 { font-size: 18px; margin: 0; font-weight: 600; letter-spacing: .5px; }
+.ver { color: var(--muted); font-weight: 400; font-size: 13px; }
+.clock { font-variant-numeric: tabular-nums; color: var(--muted); }
+
+.banner {
+  display: flex; align-items: center; gap: 12px;
+  margin: 12px 0; padding: 14px 16px; border-radius: 10px;
+  font-size: 22px; font-weight: 700;
+  background: var(--panel); border: 1px solid var(--edge);
+  transition: background .25s, border-color .25s;
+}
+.banner-icon { font-size: 16px; }
+.banner.clear  { background: var(--panel); }
+.banner.warn   { background: #4a2c07; border-color: var(--warn); }
+.banner.crit   { background: #4a0812; border-color: var(--crit); }
+.banner-detail { font-size: 14px; font-weight: 400; color: var(--muted); margin-left: auto; }
+
+main { display: grid; grid-template-columns: minmax(320px, 2fr) minmax(260px, 1fr); gap: 14px; }
+@media (max-width: 720px) { main { grid-template-columns: 1fr; } }
+
+.video-wrap { position: relative; }
+#feed { width: 100%; display: block; border-radius: 10px; background: #000; }
+.feed-lost {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.7); border-radius: 10px; font-weight: 700;
+}
+.hidden { display: none; }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--edge);
+  border-radius: 10px; padding: 12px 14px;
+}
+.panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 4px 0 8px; }
+pre {
+  background: #0a0e13; padding: 10px; border-radius: 8px;
+  overflow-x: auto; font-size: 12.5px; line-height: 1.45; white-space: pre-wrap;
+}
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--edge); }
+th { color: var(--muted); font-weight: 500; }
+.muted { color: var(--muted); }
+.risk-pill { padding: 1px 8px; border-radius: 99px; font-weight: 700; }
+.risk-low  { background: #12351f; color: #7ee2a8; }
+.risk-warn { background: #3f2708; color: #ffb066; }
+.risk-crit { background: #450a15; color: #ff7b89; }
+
+.chip { padding: 1px 8px; border-radius: 99px; font-size: 12px; }
+.chip-ok   { background: #12351f; color: #7ee2a8; }
+.chip-warn { background: #3f2708; color: #ffb066; }
+.chip-crit { background: #450a15; color: #ff7b89; }
+.hint { color: var(--muted); font-size: 12px; }
+
+footer { margin-top: 12px; color: var(--muted); font-size: 12px; text-align: center; }
